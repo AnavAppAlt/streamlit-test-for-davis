@@ -13,7 +13,7 @@ import plotly.express as px
 import time
 import json
 from folium.plugins import Draw
-from streamlit_folium import st_folium
+import streamlit_folium
 from folium.plugins import Draw
 from datetime import datetime
 from datetime import date
@@ -121,7 +121,7 @@ def app():
 
     Draw(export=False).add_to(m)
 
-    output = st_folium(m, width=1500, height=500)
+    output = streamlit_folium(m, width=1500, height=500)
     st.session_state['output'] = output
     print('output is:',output)
     if output is not None:
